@@ -1,0 +1,10 @@
+{
+  "name": "smart-contract",
+  "version": "0.0.1",
+  "repository": "git@github.com:java-technologies/smart-contract.git",
+  "author": "Ali Shanaakh <github@shanaakh.pro>",
+  "license": "MIT",
+  "dependencies": {
+    "openzeppelin-solidity": "^1.12.0"
+  }
+}
