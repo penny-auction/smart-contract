@@ -1,18 +1,6 @@
 pragma solidity ^0.4.24;
 
-contract Ownable {
-
-    address public owner;
-
-    constructor() public {
-        owner = msg.sender;
-    }
-
-    modifier onlyOwner() {
-        require(msg.sender == owner, "Access Denied. You are not an owner of the contract.");
-        _;
-    }
-}
+import "zeppelin-solidity/contracts/ownership/Ownable.sol";
 
 contract PennyAuction is Ownable {
     address[] public seller;
