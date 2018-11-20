@@ -28,5 +28,11 @@
          network_id: 3,
          gas: 4500000
      },
+     rinkeby:
+     {
+      provider: new HDWalletProvider(process.env.MNENOMIC, "https://rinkeby.infura.io/" + process.env.INFURA_API_KEY),
+      network_id: 4,
+      gas: 4500000
+     }
    }
  };

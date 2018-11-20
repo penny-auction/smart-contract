@@ -24,15 +24,15 @@ Compile and deploy your contract
 
 ```sh
 $> truffle compile
-$> truffle migrate --network ropsten
+$> truffle migrate --network rinkeby
 ```
 
-This will take some time. Once it’s fully deployed copy the last txid and go to https://ropsten.etherscan.io/tx/YOUR_LAST_TXID
+This will take some time. Once it’s fully deployed copy the last txid and go to https://rinkeby.etherscan.io/tx/YOUR_LAST_TXID
 
 To test it do
 
 ```sh
-$> truffle console --network ropsten
+$> truffle console --network rinkeby
 ```
 
 In the truffle console do
