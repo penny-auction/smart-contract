@@ -2,32 +2,27 @@ pragma solidity ^0.4.24;
 
 import "zeppelin-solidity/contracts/ownership/Ownable.sol";
 
-contract PennyAuction is Ownable {
+contract PennyAuctionContract is Ownable {
     uint256[] public bidIncrement;
-    uint256[] public bidFee;
-    uint256[] public timeIncrement;
+
     uint256[] public auctionEnd;
     uint256[] public highBid;
 
     string[] public highBidder;
 
     uint256 public counter;
+    uint256 public timeIncrement = 10 hours;
 
-    // OK.
     constructor() public {}
 
-    // OK.
     function addNewLot(
         uint256 _initialPrice,
-        uint256 _bidIncrement,
-        uint256 _timeIncrement,
-        uint256 _bidFee
+        uint256 _bidIncrement
     ) public onlyOwner returns (uint256 id) {
         highBidder.push("default"); // Set winner creator of the auction.
         bidIncrement.push(_bidIncrement);
         highBid.push(_initialPrice); // Add min price of the added product.
-        bidFee.push(_bidFee);
-        auctionEnd.push(now + _timeIncrement); // Add time, where auction should finish.
+        auctionEnd.push(block.timestamp + timeIncrement); // Add time, where auction should finish.
 
         counter++;
 
@@ -41,11 +36,9 @@ contract PennyAuction is Ownable {
         require(now < auctionEnd[id], "Auction is not finished.");
         require(keccak256(bytes(uid)) != keccak256(bytes(highBidder[id])), "Invalid uid. Already highBidder.");
 
-
-
         highBid[id] += bidIncrement[id];
 
-        auctionEnd[id] += timeIncrement[id];
+        auctionEnd[id] += timeIncrement;
 
         highBidder[id] = uid;
 

@@ -38,7 +38,7 @@ $> truffle console --network rinkeby
 In the truffle console do
 
 ```sh
-$> penny_auction = PennyAuction.at("YOUR_CONTRACT_ADDRESS")
+$> penny_auction = PennyAuctionContract.at("YOUR_CONTRACT_ADDRESS")
 ```
 
 ## Deployment

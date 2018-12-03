@@ -1,5 +1,5 @@
-const PennyAuction = artifacts.require("./PennyAuction.sol");
+const PennyAuctionContract = artifacts.require("./PennyAuctionContract.sol");
 
 module.exports = function(deployer) {
-  deployer.deploy(PennyAuction);
+  deployer.deploy(PennyAuctionContract);
 };
